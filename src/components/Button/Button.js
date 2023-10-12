@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import styles from './Button.module.css';
+import styles from "./Button.module.css";
 
-function Button({ className = '', ...delegated }) {
+function Button({ className = "", ...delegated }, ref) {
   return (
     <button
+      ref={ref}
       className={`${styles.button} ${className}`}
       {...delegated}
     />
   );
 }
 
-export default Button;
+export default React.forwardRef(Button);
